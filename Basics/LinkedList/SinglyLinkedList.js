@@ -16,31 +16,35 @@ class SinglyLinkedList {
             this.head = newNode;
         }
         else {
-            this.current = this.head;
+            let current = this.head;
 
-            while (this.current.next !== null) {
-                this.current = this.current.next;
+            while (current.next !== null) {
+                current = current.next;
             }
-            this.current.next = newNode;
+            current.next = newNode;
         }
     }
 
     display() {
-        console.log(`d`)
-        this.current = this.head;
-        while (this.current !== null) {
-            console.log(this.current.data);
-            this.current = this.current.next;
+        let current = this.head;
+        while (current !== null) {
+            console.log(current.data);
+            current = current.next;
         }
     }
 }
 
+function displayLinkedList() {
+    const list = new SinglyLinkedList();
+    list.append("2");
+    list.append("4");
+    list.append("0");
 
-const list = new SinglyLinkedList();
 
-list.append("2");
-list.append("4");
-list.append("0");
+    list.display();
+}
 
+// only execute this when the file is executed 
+if (require.main === module) displayLinkedList();
 
-list.display();
+module.exports = SinglyLinkedList;
