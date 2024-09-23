@@ -37,6 +37,7 @@ class LinkedList {
     }
 
     removeLinkedListElement(element) {
+        if(head === null) return false;
         let prev = this.head;
         let current = this.head.next;
 
